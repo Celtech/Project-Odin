@@ -4,20 +4,11 @@ package ethos.database;
 import java.sql.*;
 import java.util.Optional;
 
+import ethos.Config;
 import ethos.model.players.Player;
 import ethos.model.players.packets.commands.Command;
 
-/**
- * Opens the store page in the default web browser.
- *
- * @author Emiel
- */
 public class DonationHandler implements Runnable {
-
-    private static final String HOST = "162.218.48.74"; // website ip address
-    private static final String USER = "ascendps_master";
-    private static final String PASS = "Ascendfromashes317*";
-    private static final String DATABASE = "ascendps_donation";
 
     private Player player;
     private Connection conn;
@@ -31,7 +22,7 @@ public class DonationHandler implements Runnable {
     @Override
     public void run(){
         try {
-            if (!connect(HOST, DATABASE, USER, PASS)) {
+            if (!connect(Config.HOST, Config.DATABASE, Config.USER, Config.PASS)) {
                 return;
             }
 

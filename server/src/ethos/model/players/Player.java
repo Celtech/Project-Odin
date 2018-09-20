@@ -882,6 +882,7 @@ public class Player extends Entity {
 		CycleEventHandler.getSingleton().stopEvents(this);
 		getFriends().notifyFriendsOfUpdate();
 		if(getMode().isIronman()) {
+			//ethos.Highscores.Highscores.
 			com.everythingrs.hiscores.Hiscores.update("zlfhyknitg3ygmwes2bc07ldi4gtajdhn7ln3tjybiu76jkbj4i7m3pavp7jjgek1p2twlcvxi529",  "Iron Man", this.playerName, this.playerRank, this.playerXP, debugMessage);
 		}
 		if(getMode().isUltimateIronman()) {
@@ -890,6 +891,8 @@ public class Player extends Entity {
 		if(getMode().isRegular()) {
 			com.everythingrs.hiscores.Hiscores.update("zlfhyknitg3ygmwes2bc07ldi4gtajdhn7ln3tjybiu76jkbj4i7m3pavp7jjgek1p2twlcvxi529",  "Normal Mode", this.playerName, this.playerRank, this.playerXP, debugMessage);
 		}
+		Highscores hs = new Highscores(this);
+		hs.run();
 		Misc.println("[Logged out]: " + playerName);
 		disconnected = true;
 		// logoutDelay = Long.MAX_VALUE;

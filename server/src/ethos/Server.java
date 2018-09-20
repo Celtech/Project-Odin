@@ -158,7 +158,6 @@ public class Server {
 	 * Handles the main game processing.
 	 */
 	private static final ScheduledExecutorService GAME_THREAD = Executors.newSingleThreadScheduledExecutor();
-
 	private static final ScheduledExecutorService IO_THREAD = Executors.newSingleThreadScheduledExecutor();
 
 	static {
@@ -192,7 +191,7 @@ public class Server {
 
 	private static final Runnable IO_TASKS = () -> {
 		try {
-			// TODO tasks(players online, etc)
+			PlayersOnline.updatePlayerCount();
 		} catch (Throwable t) {
 			t.printStackTrace();
 		}

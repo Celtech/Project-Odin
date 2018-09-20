@@ -651,12 +651,10 @@ public class ObjectOptionOne {
 			c.getDH().sendDialogues(70300, -1);
 			break;
 		case 30266:
-			if (c != null) {
+			{
 				c.sendMessage("The Inferno is currently under construction.");
 				return;
 			}
-			c.getPA().movePlayer(2495, 5174, 0);
-			break;
 		case 28894:
 		case 28895:
 		case 28898:

@@ -20,7 +20,7 @@ public class PlayersOnline {
 		}
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			con = DriverManager.getConnection("jdbc:mysql://212.1.208.242/ospsorg_world", "ospsorg_julius", "ballehora");
+			con = DriverManager.getConnection("jdbc:mysql://"+Config.HOST+":3306/"+Config.DATABASE+"", Config.USER, Config.PASS);
 			stm = con.createStatement();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -51,21 +51,15 @@ public class PlayersOnline {
 		}
 	}	
 
-	public static boolean offline(Player c) {
-		try {
-			query("REPLACE INTO `online` (id, currentlyonline) VALUES('1','"+PlayerHandler.getPlayerCount()+"');");
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			return false;
+	public static boolean updatePlayerCount() {
+		if(Config.BETA_MODE) {
+			System.out.println("Attempting to log online user.");
 		}
-		return true;
-	}
-
-	public static boolean online(Player c) {
+		
 		try {
+			createCon();
 			query("REPLACE INTO `online` (id, currentlyonline) VALUES('1','"+PlayerHandler.getPlayerCount()+"');");
-
+			destroyCon();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;

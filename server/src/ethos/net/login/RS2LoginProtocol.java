@@ -14,6 +14,7 @@ import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.handler.codec.frame.FrameDecoder;
 
 import ethos.Config;
+import ethos.PlayersOnline;
 import ethos.Server;
 import ethos.event.CycleEventHandler;
 import ethos.model.players.ConnectedFrom;
@@ -253,6 +254,7 @@ public class RS2LoginProtocol extends FrameDecoder {
 			player.initialize();
 			player.initialized = true;
 		}
+		
 		return player;
 	}
 

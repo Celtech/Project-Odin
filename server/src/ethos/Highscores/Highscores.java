@@ -17,7 +17,7 @@ public class Highscores implements Runnable {
 	public static void main(String[] args) {
 		Connection conn;
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://"+HOST+":3306/"+DATABASE, USER, PASS);
+			conn = DriverManager.getConnection("jdbc:mysql://"+Config.HOST+":3306/"+Config.DATABASE, Config.USER, Config.PASS);
 			
 			Statement stmt = conn.createStatement(1005, 1008);
             stmt.executeUpdate("DELETE FROM hs_users WHERE username='test user'");
@@ -26,11 +26,6 @@ public class Highscores implements Runnable {
 		}
 	}
 
-	public static final String HOST = "localhost"; // website ip address
-	public static final String USER = "ascendps_master";
-	public static final String PASS = "Ascendfromashes317*";
-	public static final String DATABASE = "ascendps_highscores";
-	
 	private Player player;
 	private Connection conn;
 	private Statement stmt;
@@ -41,7 +36,7 @@ public class Highscores implements Runnable {
 	
 	public boolean connect() {
 		try {
-			this.conn = DriverManager.getConnection("jdbc:mysql://"+HOST+":3306/"+DATABASE, USER, PASS);
+			this.conn = DriverManager.getConnection("jdbc:mysql://"+Config.HOST+":3306/"+Config.DATABASE, Config.USER, Config.PASS);
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -74,7 +69,7 @@ public class Highscores implements Runnable {
 			}
 			
 			stmt2.execute();
-			
+			System.out.println("Saving Highscores.");
 			destroy();
 		} catch (Exception e) {
 			e.printStackTrace();

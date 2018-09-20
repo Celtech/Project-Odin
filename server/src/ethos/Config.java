@@ -10,6 +10,15 @@ public class Config {
 
 	// Make sure this matches client version
 	public static final int CLIENT_VERSION = 4;
+	
+	
+	/**
+	 * Database variables for highscores and web shop
+	 */
+	public static final String HOST = "localhost";
+	public static final String USER = "root";
+	public static final String PASS = "";
+	public static final String DATABASE = "rsps";
 
 	/**
 	 * Defines which port is being used (see {@link ServerState})
@@ -363,7 +372,7 @@ public class Config {
 	/**
 	 * SQL override, should be true in environments with no SQL setup properly
 	 */
-	public static boolean BLOCK_SQL = true;
+	public static boolean BLOCK_SQL = false;
 
 	/**
 	 * How fast the special attack bar refills.
