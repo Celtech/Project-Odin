@@ -12,7 +12,7 @@
 * Tabs not spaces
 * Clear consise variable name
 * Camel Cased naming convention
-* Brackets on the same line as the function 
+* Brackets on the same line as the function Ex:
 
 ```java
 public functionName(String text) {
