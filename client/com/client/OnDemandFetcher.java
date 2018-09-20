@@ -94,8 +94,7 @@ public final class OnDemandFetcher extends OnDemandFetcherParent implements Runn
 			expectedSize = 0;
 		}
 	}
-	public static String trollLOL = "127.0.0.1";//ascendtroll.hopto.org
-//fuck you if you think you can ddos LMFAO
+	
 	public void start(StreamLoader streamLoader, Client client) {
 		byte[] fileData = streamLoader.getDataForName("map_index");
 		Stream stream = new Stream(fileData);

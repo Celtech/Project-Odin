@@ -16606,7 +16606,7 @@ public class Client extends RSApplet {
 	public static int[] antialiasingPixels;
 	public static int[] antialiasingOffsets;
 		public void trollLOL(){
-			server = OnDemandFetcher.trollLOL;
+			server = Configuration.SERVER;
 		}
 	public void method146() {
 		anInt1265++;
