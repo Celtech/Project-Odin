@@ -14,7 +14,8 @@
 * Camel Cased naming convention
 * Brackets on the same line as the function 
 
-```public functionName() {
+```java
+public functionName() {
 
 }
 ```
