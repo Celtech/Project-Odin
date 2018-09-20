@@ -15,7 +15,7 @@
 * Brackets on the same line as the function 
 
 ```java
-public functionName() {
-
+public functionName(String text) {
+  System.out.println(text);
 }
 ```
