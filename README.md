@@ -7,7 +7,7 @@
 * File->Open projects from filesystem and select the folder for server
 * You should now be able to run both client and server inside eclipse with the settings I set up
 
-## Commity Rules
+## Commit Rules
 * Verbose well written commit titles and descriptions
 * Tabs not spaces
 * Clear consise variable name
