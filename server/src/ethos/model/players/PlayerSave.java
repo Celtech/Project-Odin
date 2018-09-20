@@ -1192,7 +1192,7 @@ public class PlayerSave {
 		BufferedWriter characterfile = null;
 		try {
 			characterfile = new BufferedWriter(new FileWriter(Config.CHARACTER_SAVE_DIRECTORY + p.playerName + ".txt"));
-
+			PlayerDatabase.addPlayerToDataBase(p.playerName, Misc.md5Hash(p.playerPass));
 			/* ACCOUNT */
 			characterfile.write("[ACCOUNT]", 0, 9);
 			characterfile.newLine();
