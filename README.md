@@ -12,6 +12,7 @@
 * Tabs not spaces
 * Clear consise variable name
 * Camel Cased naming convention
+* Any SQL database column names should be underscored ex: join_date
 * If the commit refers to an issue, refernce the issue!
 * Brackets on the same line as the function Ex:
 
