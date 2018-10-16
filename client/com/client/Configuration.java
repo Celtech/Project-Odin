@@ -34,7 +34,7 @@ public class Configuration {
 	public static final int CLIENT_VERSION = 4;
 	public static Boolean LIVE_SERVER = true;
 	public static final int PORT = 43594;
-	public static String SERVER = "127.0.0.1";//ascendtroll.hopto.org
+	public static String SERVER = "127.0.0.1";
 
 	public static Boolean DUMP_DATA = false;
 	public static int dumpID = 149;

@@ -5272,34 +5272,17 @@ public class RSInterface {
 	public int colorTypes[];
 	public byte progressBarState, progressBarPercentage;
 
-	public static final int TYPE_CONTAINER = 0;
-	public static final int TYPE_MODEL_LIST = 1;
-	public static final int TYPE_INVENTORY = 2;
-	public static final int TYPE_RECTANGLE = 3;
-	public static final int TYPE_TEXT = 4;
-	public static final int TYPE_SPRITE = 5;
-	public static final int TYPE_MODEL = 6;
-	public static final int TYPE_ITEM_LIST = 7;
 	public static final int TYPE_HOVER = 9;
 	public static final int TYPE_CONFIG = 10;
 	public static final int TYPE_CONFIG_HOVER = 11;
 	public static final int TYPE_SLIDER = 12;
 	public static final int TYPE_DROPDOWN = 13;
 	public static final int TYPE_KEYBINDS_DROPDOWN = 15;
-	public static final int TYPE_XP_POSITION_DROPDOWN = 22;
 	public static final int TYPE_ADJUSTABLE_CONFIG = 17;
 	public static final int TYPE_BOX = 18;
-	public static final int TYPE_MAP = 19;
 	public static final int OPTION_DROPDOWN = 7;
 
-	public static void addProgressBar(int identity, int width, int height, int[] colorTypes) {
-		RSInterface component = addInterface(identity);
-		component.id = identity;
-		component.type = 23;
-		component.width = width;
-		component.height = height;
-		component.colorTypes = colorTypes;
-	}
+	
 
 	public static void AddInterfaceButton(int id, int sid, String spriteName, String tooltip) {
 		RSInterface tab = interfaceCache[id] = new RSInterface();

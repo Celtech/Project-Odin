@@ -164,44 +164,9 @@ public class Sprite extends DrawingArea {
 		}
 	}
 
-	public Sprite(String img, int i) {
-		ImageIcon imageicon = new ImageIcon(img);
-		imageicon.getIconHeight();
-		imageicon.getIconWidth();
-		try {
-			image = Toolkit.getDefaultToolkit().createImage(
-					FileOperations.readFile(img));
-			myWidth = imageicon.getIconWidth();
-			myHeight = imageicon.getIconHeight();
-			maxWidth = myWidth;
-			maxHeight = myHeight;
-			anInt1442 = 0;
-			anInt1443 = 0;
-			myPixels = new int[myWidth * myHeight];
-			PixelGrabber pixelgrabber = new PixelGrabber(image, 0, 0, myWidth,
-					myHeight, myPixels, 0, myWidth);
-			pixelgrabber.grabPixels();
-		} catch (Exception _ex) {
-			System.out.println(_ex);
-		}
-	}
 	
-	public Sprite(Sprite sprite, int width, int height) {
-		try {
-			image = sprite.image;
-			myWidth = width;
-			myHeight = height;
-			maxWidth = width;
-			maxHeight = height;
-			anInt1442 = 0;
-			anInt1443 = 0;
-			myPixels = new int[myWidth * myHeight];
-			new PixelGrabber(image, 0, 0, myWidth,
-					myHeight, myPixels, 0, myWidth).grabPixels();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+	
+	
 	
 	public void drawARGBSprite2(int xPos, int yPos) {
 		drawARGBSprite2(xPos, yPos, 256);
@@ -274,24 +239,7 @@ public class Sprite extends DrawingArea {
     	}
     }
 
-	public Sprite(String img, int width, int height) {
-		try {
-			image = Toolkit.getDefaultToolkit().createImage(
-					FileOperations.readFile(img));
-			myWidth = width;
-			myHeight = height;
-			maxWidth = myWidth;
-			maxHeight = myHeight;
-			anInt1442 = 0;
-			anInt1443 = 0;
-			myPixels = new int[myWidth * myHeight];
-			PixelGrabber pixelgrabber = new PixelGrabber(image, 0, 0, myWidth,
-					myHeight, myPixels, 0, myWidth);
-			pixelgrabber.grabPixels();
-		} catch (Exception _ex) {
-			
-		}
-	}
+	
 
 	public void setAlphaTransparency(int a) {
 		for (int pixel = 0; pixel < myPixels.length; pixel++) {

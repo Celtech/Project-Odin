@@ -30,10 +30,6 @@ public class ExperienceDrop {
 	 */
 	public static final int START_Y = 150;
 	
-	/**
-	 * The distance in-between the chat box and the start of the experience drop.
-	 */
-	public static final int EXCESS_DISTANCE = 314 - START_Y;
 	
 	/**
 	 * The amount at which we decrement by each pulse

@@ -162,7 +162,7 @@ public enum Dropdown {
                     Configuration.enableFogRendering = true;
                     Configuration.enableRainbowFog= true;
                     Client.instance.pushMessage("Please do ::fogdelay to add a timer to the fog!", 0,"");
-					Client.instance.pushMessage("@red@ Warning this could give you seizures! Use at an extreme caution! Ascend not responsible! LoL", 0,"");
+					Client.instance.pushMessage("@red@ Warning this could give you seizures! Use at an extreme caution! We are not responsible!", 0,"");
                 return;
 
 			}

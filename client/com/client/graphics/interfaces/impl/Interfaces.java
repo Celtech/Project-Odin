@@ -2531,58 +2531,11 @@ public class Interfaces extends RSInterface {
 	public static final int BEGIN_READING_PRAYER_INTERFACE = 6;// Amount of total custom prayers we've added
 	public static final int CUSTOM_PRAYER_HOVERS = 3; // Amount of custom prayer hovers we've added
 
-	public static final int PRAYER_INTERFACE_CHILDREN = 80 + BEGIN_READING_PRAYER_INTERFACE + CUSTOM_PRAYER_HOVERS;
+	
 
 	public static final int TYPE_SPRITE = 5;
 
-	public static void addPrayer2(int ID, String tooltip, int w, int h, int glowSprite, int glowX, int glowY,
-			int sprite1, int sprite2, int config, int configFrame, int hover) {
-		RSInterface p = addTabInterface(ID);
-		// Adding config-toggleable glow on the prayer
-		// Also clickable
-		p.parentID = 5608;
-		p.type = TYPE_SPRITE;
-		p.atActionType = 1;
-		p.width = w;
-		p.height = h;
-		p.requiredValues = new int[1];
-		p.valueCompareType = new int[1];
-		p.valueCompareType[0] = 1;
-		p.requiredValues[0] = config;
-		p.valueIndexArray = new int[1][3];
-		p.valueIndexArray[0][0] = 5;
-		p.valueIndexArray[0][1] = configFrame;
-		p.valueIndexArray[0][2] = 0;
-		p.tooltip = tooltip;
-		p.message = tooltip;
-		p.hoverType = 52;
-		p.sprite1 = imageLoader(0, "PRAYERGLOW");
-		p.sprite2 = imageLoader(1, "PRAYERGLOW");
-		p.spriteXOffset = glowX;
-		p.spriteYOffset = glowY;
-
-		// Adding config-toggleable prayer sprites
-		// not clickable
-		p = addTabInterface(ID + 1);
-		p.parentID = 5608;
-		p.type = TYPE_SPRITE;
-		p.atActionType = 0;
-		p.width = w;
-		p.height = h;
-		p.requiredValues = new int[1];
-		p.valueCompareType = new int[1];
-		p.valueCompareType[0] = 2;
-		p.requiredValues[0] = 1;
-		p.valueIndexArray = new int[1][3];
-		p.valueIndexArray[0][0] = 5;
-		p.valueIndexArray[0][1] = configFrame + 1;
-		p.valueIndexArray[0][2] = 0;
-		p.tooltip = tooltip;
-		p.message = tooltip;
-		p.sprite2 = Client.cacheSprite2[sprite1]; // imageLoader(sprite1, "s");
-		p.sprite1 = Client.cacheSprite2[sprite2]; // imageLoader(sprite2, "s");
-		p.hoverType = hover;
-	}
+	
 
 	public static void addPrayerHover(TextDrawingArea[] tda, int idx, int ID, String hover, int xOffset, int yOffset) {
 		// Adding hover box

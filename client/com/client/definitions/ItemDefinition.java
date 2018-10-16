@@ -143,6 +143,33 @@ public final class ItemDefinition {
 				itemDef.inventoryOptions = new String[] { "Open", null, null, null, "Drop" };
 				itemDef.description = "Mystery box that contains goodies.";
 				break;
+			case 22329:
+				itemDef.name = "Donator Mystery Box";
+				itemDef.inventoryOptions = new String[] { "Open", null, null, null, "Drop" };
+				itemDef.description = "Mystery box that contains goodies.";
+				itemDef.modelId = 2426;
+				itemDef.modelZoom = 1180;
+				itemDef.modelRotation2 = 172;
+				itemDef.modelRotation1 = 160;
+				itemDef.modelOffset2 = -14;
+				itemDef.modelOffset1 = 0;
+				
+				itemDef.originalModelColors = new int[] { 933, 933, 600 };
+				itemDef.modifiedModelColors = new int[] { 22410, 926, 2999 };
+				
+				//Red and black
+				//itemDef.originalModelColors = new int[] { 933, 933, 6 };
+				//itemDef.modifiedModelColors = new int[] { 22410, 926, 2999 };
+				//Yellow and black
+				//itemDef.originalModelColors = new int[] { 8128, 8128, 6 };
+				//itemDef.modifiedModelColors = new int[] { 22410, 926, 2999 };
+				//Black and gray
+				//itemDef.originalModelColors = new int[] { 12, 6, 63 };
+				//itemDef.modifiedModelColors = new int[] { 22410, 926, 2999 };
+				//orange and black
+				//itemDef.originalModelColors = new int[] { 332770, 39839, 6 };
+				//itemDef.modifiedModelColors = new int[] { 22410, 926, 2999 };
+				break;
 			case 15098:
 				itemDef.name = "Dice (up to 100)";
 				itemDef.description = "A 100-sided dice.";

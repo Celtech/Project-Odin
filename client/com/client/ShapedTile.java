@@ -219,9 +219,9 @@ final class ShapedTile {
     static final int[] viewSpaceX = new int[6];
     static final int[] viewSpaceY = new int[6];
     static final int[] viewSpaceZ = new int[6];
-    static final int[] anIntArray693 = {1, 0};
-    static final int[] anIntArray694 = {2, 1};
-    static final int[] anIntArray695 = {3, 3};
+    
+    
+    
     private static final int[][] shapedTilePointData = {{1, 3, 5, 7},
             {1, 3, 5, 7}, {1, 3, 5, 7}, {1, 3, 5, 7, 6},
             {1, 3, 5, 7, 6}, {1, 3, 5, 7, 6}, {1, 3, 5, 7, 6},

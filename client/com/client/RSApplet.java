@@ -88,27 +88,19 @@ public class RSApplet extends Applet implements Runnable, MouseListener, MouseMo
 					}
 				}
 
-				int setting = 0;
 				if (Client.cameraZoom > 1000) {
-					setting = 4;
 				} else if (Client.cameraZoom > 800) {
-					setting = 3;
 				} else if (Client.cameraZoom > 600) {
-					setting = 2;
 				} else if (Client.cameraZoom > 400) {
-					setting = 1;
 				}
-				
+
 				RSInterface.interfaceCache[SettingsWidget.ZOOMTOGGLE].active = true;
-				
+
 				/*
-				//this is commented out because settings[168] is nulling when a value is set to it.
-				try {
-					Client.instance.settings[168] = setting;
-				} catch (Exception e) {
-					System.out.println("Failed to set settings[168] to: "+setting);
-				}
-				*/
+				 * //this is commented out because settings[168] is nulling when a value is set
+				 * to it. try { Client.instance.settings[168] = setting; } catch (Exception e) {
+				 * System.out.println("Failed to set settings[168] to: "+setting); }
+				 */
 				RSInterface.interfaceCache[SettingsWidget.ZOOM_SLIDER].slider.setValue(Client.cameraZoom);
 			}
 		}
@@ -168,6 +160,7 @@ public class RSApplet extends Applet implements Runnable, MouseListener, MouseMo
 			}
 		}
 	}
+
 	void drawLoadingText(int percentage, String s, int downloadSpeed, int secondsRemaining) {
 		while (graphics == null) {
 			graphics = getGameComponent().getGraphics();
@@ -184,11 +177,11 @@ public class RSApplet extends Applet implements Runnable, MouseListener, MouseMo
 		FontMetrics fontmetrics = getGameComponent().getFontMetrics(font);
 		Font font1 = new Font("Helvetica", 0, 13);
 		getGameComponent().getFontMetrics(font1);
-		//if (shouldClearScreen) {
+		// if (shouldClearScreen) {
 		graphics.setColor(Color.black);
 		graphics.fillRect(0, 0, myWidth, myHeight);
 		shouldClearScreen = false;
-		//}
+		// }
 		Color color = new Color(140, 17, 17);
 		int j = myHeight / 2 - 18;
 		graphics.setColor(color);
@@ -198,15 +191,14 @@ public class RSApplet extends Applet implements Runnable, MouseListener, MouseMo
 		graphics.fillRect((myWidth / 2 - 150) + percentage * 3, j + 2, 300 - percentage * 3, 30);
 		graphics.setFont(font);
 		graphics.setColor(Color.white);
-		graphics.drawString(s, (myWidth - fontmetrics.stringWidth(s)) / 2,
-				j + 22);
+		graphics.drawString(s, (myWidth - fontmetrics.stringWidth(s)) / 2, j + 22);
 
-
-		if(downloadSpeed != -1 && secondsRemaining != -1) {
+		if (downloadSpeed != -1 && secondsRemaining != -1) {
 			String text = "Current download speed: " + downloadSpeed + "Kb/s - Seconds remaining: " + secondsRemaining;
 			graphics.drawString(text, (myWidth - fontmetrics.stringWidth(text)) / 2, j + 70);
 		}
 	}
+
 	@Override
 	public void run() {
 		getGameComponent().addMouseListener(this);
@@ -396,7 +388,7 @@ public class RSApplet extends Applet implements Runnable, MouseListener, MouseMo
 		mouseX = -1;
 		mouseY = -1;
 	}
-	
+
 	public static boolean sliderShowAlpha = false;
 	public static boolean flag22 = false;
 	public static boolean flag23 = false;
@@ -529,60 +521,25 @@ public class RSApplet extends Applet implements Runnable, MouseListener, MouseMo
 			Keybinding.isBound(KeyEvent.VK_F12);
 		}
 		/**
-		if (hotKeyToggle == true) {
-			if (i == KeyEvent.VK_F5) {
-				Client.setTab(0);
-			} else if (i == KeyEvent.VK_F11) {
-				Client.setTab(1);
-			} else if (i == KeyEvent.VK_F12) {
-				Client.setTab(2);
-			} else if (i == KeyEvent.VK_F1) {
-				Client.setTab(3);
-			} else if (i == KeyEvent.VK_F2) {
-				Client.setTab(4);
-			} else if (i == KeyEvent.VK_F3) {
-				Client.setTab(5);
-			} else if (i == KeyEvent.VK_F4) {
-				Client.setTab(6);
-			} else if (i == KeyEvent.VK_F8) {
-				Client.setTab(7);
-			} else if (i == KeyEvent.VK_F9) {
-				Client.setTab(8);
-			} else if (i == KeyEvent.VK_F10) {
-				Client.setTab(9);
-			} else if (i == KeyEvent.VK_F11) {
-				Client.setTab(10);
-			} else if (i == KeyEvent.VK_F12) {
-				Client.setTab(11);
-			}
-		} else {
-			if (i == KeyEvent.VK_F1) {
-				Client.setTab(3);
-			} else if (i == KeyEvent.VK_F2) {
-				Client.setTab(1);
-			} else if (i == KeyEvent.VK_F3) {
-				Client.setTab(2);
-			} else if (i == KeyEvent.VK_F4) {
-				Client.setTab(3);
-			} else if (i == KeyEvent.VK_F5) {
-				Client.setTab(4);
-			} else if (i == KeyEvent.VK_F6) {
-				Client.setTab(5);
-			} else if (i == KeyEvent.VK_F7) {
-				Client.setTab(6);
-			} else if (i == KeyEvent.VK_F8) {
-				Client.setTab(7);
-			} else if (i == KeyEvent.VK_F9) {
-				Client.setTab(8);
-			} else if (i == KeyEvent.VK_F10) {
-				Client.setTab(9);
-			} else if (i == KeyEvent.VK_F11) {
-				Client.setTab(10);
-			} else if (i == KeyEvent.VK_F12) {
-				Client.setTab(11);
-			}
-		}
-**/
+		 * if (hotKeyToggle == true) { if (i == KeyEvent.VK_F5) { Client.setTab(0); }
+		 * else if (i == KeyEvent.VK_F11) { Client.setTab(1); } else if (i ==
+		 * KeyEvent.VK_F12) { Client.setTab(2); } else if (i == KeyEvent.VK_F1) {
+		 * Client.setTab(3); } else if (i == KeyEvent.VK_F2) { Client.setTab(4); } else
+		 * if (i == KeyEvent.VK_F3) { Client.setTab(5); } else if (i == KeyEvent.VK_F4)
+		 * { Client.setTab(6); } else if (i == KeyEvent.VK_F8) { Client.setTab(7); }
+		 * else if (i == KeyEvent.VK_F9) { Client.setTab(8); } else if (i ==
+		 * KeyEvent.VK_F10) { Client.setTab(9); } else if (i == KeyEvent.VK_F11) {
+		 * Client.setTab(10); } else if (i == KeyEvent.VK_F12) { Client.setTab(11); } }
+		 * else { if (i == KeyEvent.VK_F1) { Client.setTab(3); } else if (i ==
+		 * KeyEvent.VK_F2) { Client.setTab(1); } else if (i == KeyEvent.VK_F3) {
+		 * Client.setTab(2); } else if (i == KeyEvent.VK_F4) { Client.setTab(3); } else
+		 * if (i == KeyEvent.VK_F5) { Client.setTab(4); } else if (i == KeyEvent.VK_F6)
+		 * { Client.setTab(5); } else if (i == KeyEvent.VK_F7) { Client.setTab(6); }
+		 * else if (i == KeyEvent.VK_F8) { Client.setTab(7); } else if (i ==
+		 * KeyEvent.VK_F9) { Client.setTab(8); } else if (i == KeyEvent.VK_F10) {
+		 * Client.setTab(9); } else if (i == KeyEvent.VK_F11) { Client.setTab(10); }
+		 * else if (i == KeyEvent.VK_F12) { Client.setTab(11); } }
+		 **/
 		if (keyevent.isControlDown()) {
 			Client.controlIsDown = true;
 		}

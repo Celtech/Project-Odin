@@ -156,7 +156,7 @@ public class GrandExchange extends RSInterface {
 			addToItemGroup(childId + 4, 1, 1, 0, 0, false, "", "", "");
 			setBounds(childId + 4, 7, 35, 3, widget);
 			
-			addProgressBar(childId + 5, 107, 15, new int[] { GREEN_COLOR, RED_COLOR });
+			//addProgressBar(childId + 5, 107, 15, new int[] { GREEN_COLOR, RED_COLOR });
 			setBounds(childId + 5, 4, 75, 4, widget);
 			
 			addText(childId + 6, "" + (childId + 6), tda, 2, 0xFF981F, true, true);
@@ -416,7 +416,7 @@ public class GrandExchange extends RSInterface {
 			//Adds the current GE item 
 			setBounds(itemBoxChildId + 4, startX + 79, startY + 74, 1, widget);
 			
-			addProgressBar(childId + 1, 291, 15, new int[] { GREEN_COLOR, RED_COLOR });
+			//addProgressBar(childId + 1, 291, 15, new int[] { GREEN_COLOR, RED_COLOR });
 			setBounds(childId + 1, startX + 60, startY + 280, 2, widget);
 			
 			addText(childId + 2, Integer.toString(childId + 2), tda, 2, 0xFF981F, true, true);
@@ -446,28 +446,28 @@ public class GrandExchange extends RSInterface {
 		setBounds(26003, startX + 432, startY + 7, 2, widget);
 
 		int grandExchangeBox = 0;
-		addProgressBar(26005, 40, 18, new int[] { GREEN_COLOR, RED_COLOR });
+		//addProgressBar(26005, 40, 18, new int[] { GREEN_COLOR, RED_COLOR });
 		setBounds(26005, startX + 23, startY + 52, 3, widget);
 		setBounds(grandExchangeItemBoxIds[grandExchangeBox] + 4, startX + 88, startY + 53, 4, widget);
 		setBounds(grandExchangeOfferStatusInterfaceIds[grandExchangeBox] + 3, startX + 27, startY + 78, 5, widget);
 		setBounds(grandExchangeOfferStatusInterfaceIds[grandExchangeBox] + 4, startX + 72, startY + 78, 6, widget);
 		grandExchangeBox++;
 		
-		addProgressBar(26006, 40, 18, new int[] { GREEN_COLOR, RED_COLOR });
+		//addProgressBar(26006, 40, 18, new int[] { GREEN_COLOR, RED_COLOR });
 		setBounds(26006, startX + 133, startY + 52, 7, widget);
 		setBounds(grandExchangeItemBoxIds[grandExchangeBox] + 4, startX + 198, startY + 53, 8, widget);
 		setBounds(grandExchangeOfferStatusInterfaceIds[grandExchangeBox] + 3, startX + 137, startY + 78, 9, widget);
 		setBounds(grandExchangeOfferStatusInterfaceIds[grandExchangeBox] + 4, startX + 182, startY + 78, 10, widget);
 		grandExchangeBox++;
 		
-		addProgressBar(26007, 40, 18, new int[] { GREEN_COLOR, RED_COLOR });
+		//addProgressBar(26007, 40, 18, new int[] { GREEN_COLOR, RED_COLOR });
 		setBounds(26007, startX + 243, startY + 52, 11, widget);
 		setBounds(grandExchangeItemBoxIds[grandExchangeBox] + 4, startX + 308, startY + 53, 12, widget);
 		setBounds(grandExchangeOfferStatusInterfaceIds[grandExchangeBox] + 3, startX + 248, startY + 78, 13, widget);
 		setBounds(grandExchangeOfferStatusInterfaceIds[grandExchangeBox] + 4, startX + 304, startY + 78, 14, widget);
 		grandExchangeBox++;
 		
-		addProgressBar(26008, 40, 18, new int[] { GREEN_COLOR, RED_COLOR });
+		//addProgressBar(26008, 40, 18, new int[] { GREEN_COLOR, RED_COLOR });
 		setBounds(26008, startX + 353, startY + 52, 15, widget);
 		setBounds(grandExchangeItemBoxIds[grandExchangeBox] + 4, startX + 418, startY + 53, 16, widget);
 		setBounds(grandExchangeOfferStatusInterfaceIds[grandExchangeBox] + 3, startX + 359, startY + 78, 17, widget);
@@ -475,28 +475,28 @@ public class GrandExchange extends RSInterface {
 		grandExchangeBox++;
 		
 		
-		addProgressBar(26009, 40, 18, new int[] { GREEN_COLOR, RED_COLOR });
+		//addProgressBar(26009, 40, 18, new int[] { GREEN_COLOR, RED_COLOR });
 		setBounds(26009, startX + 23, startY + 136, 19, widget);
 		setBounds(grandExchangeItemBoxIds[grandExchangeBox] + 4, startX + 88, startY + 137, 20, widget);
 		setBounds(grandExchangeOfferStatusInterfaceIds[grandExchangeBox] + 3, startX + 27, startY + 162, 21, widget);
 		setBounds(grandExchangeOfferStatusInterfaceIds[grandExchangeBox] + 4, startX + 72, startY + 162, 22, widget);
 		grandExchangeBox++;
 		
-		addProgressBar(26010, 40, 18, new int[] { GREEN_COLOR, RED_COLOR });
+		//addProgressBar(26010, 40, 18, new int[] { GREEN_COLOR, RED_COLOR });
 		setBounds(26010, startX + 133, startY + 136, 23, widget);
 		setBounds(grandExchangeItemBoxIds[grandExchangeBox] + 4, startX + 198, startY + 137, 24, widget);
 		setBounds(grandExchangeOfferStatusInterfaceIds[grandExchangeBox] + 3, startX + 137, startY + 162, 25, widget);
 		setBounds(grandExchangeOfferStatusInterfaceIds[grandExchangeBox] + 4, startX + 182, startY + 162, 26, widget);
 		grandExchangeBox++;
 		
-		addProgressBar(26011, 40, 18, new int[] { GREEN_COLOR, RED_COLOR });
+		//addProgressBar(26011, 40, 18, new int[] { GREEN_COLOR, RED_COLOR });
 		setBounds(26011, startX + 243, startY + 136, 27, widget);
 		setBounds(grandExchangeItemBoxIds[grandExchangeBox] + 4, startX + 308, startY + 137, 28, widget);
 		setBounds(grandExchangeOfferStatusInterfaceIds[grandExchangeBox] + 3, startX + 248, startY + 162, 29, widget);
 		setBounds(grandExchangeOfferStatusInterfaceIds[grandExchangeBox] + 4, startX + 304, startY + 162, 30, widget);
 		grandExchangeBox++;
 		
-		addProgressBar(26012, 40, 18, new int[] { GREEN_COLOR, RED_COLOR });
+		//addProgressBar(26012, 40, 18, new int[] { GREEN_COLOR, RED_COLOR });
 		setBounds(26012, startX + 353, startY + 136, 31, widget);
 		setBounds(grandExchangeItemBoxIds[grandExchangeBox] + 4, startX + 418, startY + 137, 32, widget);
 		setBounds(grandExchangeOfferStatusInterfaceIds[grandExchangeBox] + 3, startX + 359, startY + 162, 33, widget);

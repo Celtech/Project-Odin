@@ -19,16 +19,7 @@ public class RSMenuItem {
 		this.text = text;
 	}
 	
-	/**
-	 * Creates a new item to be displayed on a menu with a sprite
-	 * and some text. 
-	 * @param sprite	the image being drawn on the item
-	 * @param text		the text being displayed
-	 */
-	public RSMenuItem(Sprite sprite, String text) {
-		this.sprite = sprite;
-		this.text = text;
-	}
+	
 	
 	/**
 	 * The text that represents this item
