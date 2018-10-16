@@ -13,12 +13,12 @@ public class Config {
 	
 	
 	/**
-	 * Database variables for highscores and web shop
+	 * Database credentials that control everything server side
 	 */
-	public static final String HOST = "localhost";
-	public static final String USER = "root";
-	public static final String PASS = "";
-	public static final String DATABASE = "rsps";
+	public static final String HOST = "131.153.26.50";
+	public static final String USER = "Runescape";
+	public static final String PASS = "4x4XNNA8eG84DayW";
+	public static final String DATABASE = "Runescape";
 
 	/**
 	 * Defines which port is being used (see {@link ServerState})

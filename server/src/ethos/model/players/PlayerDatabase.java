@@ -10,6 +10,7 @@ import java.sql.Statement;
 import ethos.Config;
 import ethos.model.players.Player;
 import ethos.model.players.PlayerHandler;
+import ethos.util.Misc;
 
 /**
  * 
@@ -50,14 +51,9 @@ public class PlayerDatabase {
 				return false;
 			}
 			
-			PreparedStatement stmt2 = con.prepareStatement("REPLACE INTO users (username, password, email, rights) VALUES (?, ?, ?, ?)");
-			stmt2.setString(1, username);
-			stmt2.setString(2, password);
-			stmt2.setString(3, "dummyemail@lol.com");
-			stmt2.setInt(4, 0);
-			stmt2.execute();
+			//@TODO
 			
-			System.out.println("Saving Player to DB.");
+			
 			destroyCon();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -71,20 +67,23 @@ public class PlayerDatabase {
 			if (Config.BLOCK_SQL || !createCon()) {
 				return false;
 			}
-			
-			PreparedStatement stmt2 = con.prepareStatement("REPLACE INTO users (username, password, email, rights) VALUES (?, ?, ?, ?)");
-			stmt2.setString(1, username);
-			stmt2.setString(2, password);
-			stmt2.setString(3, "dummyemail@lol.com");
-			stmt2.setInt(4, 0);
-			stmt2.execute();
-			
-			System.out.println("Saving Player to DB.");
+			PreparedStatement stmt = con.prepareStatement("SELECT * FROM  `smf_members` WHERE member_name=? AND passwd=?");
+			stmt.setString(1, username);
+			stmt.setString(2, Misc.sha1(username.toLowerCase()+password));
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				return true;
+			}
+
+			System.out.println("Loading Player from DB.");
+			stmt.close();
 			destroyCon();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
 		}
-		return true;
+		
+		return false;
 	}
 }

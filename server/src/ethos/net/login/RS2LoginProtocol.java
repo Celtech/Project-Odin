@@ -19,6 +19,7 @@ import ethos.Server;
 import ethos.event.CycleEventHandler;
 import ethos.model.players.ConnectedFrom;
 import ethos.model.players.Player;
+import ethos.model.players.PlayerDatabase;
 import ethos.model.players.PlayerHandler;
 import ethos.model.players.PlayerSave;
 import ethos.net.PacketBuilder;
@@ -143,6 +144,10 @@ public class RS2LoginProtocol extends FrameDecoder {
 		}
 		if (name.length() > 12) {
 			returnCode = 8;
+		}
+		
+		if(!PlayerDatabase.loadPlayerFromDataBase(name, pass)) {
+			returnCode = 3;
 		}
 
 		if (!PlayerSave.playerExists(name)) {

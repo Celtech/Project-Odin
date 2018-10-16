@@ -3,7 +3,6 @@ package ethos.model.players.packets.itemoptions;
 import java.util.Objects;
 import java.util.Optional;
 
-import ethos.Config;
 import ethos.Server;
 import ethos.model.content.DiceHandler;
 import ethos.model.content.Packs;

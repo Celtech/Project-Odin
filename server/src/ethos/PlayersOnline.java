@@ -58,7 +58,7 @@ public class PlayersOnline {
 		
 		try {
 			createCon();
-			query("REPLACE INTO `online` (id, currentlyonline) VALUES('1','"+PlayerHandler.getPlayerCount()+"');");
+			query("REPLACE INTO `game_online_users` (id, currentlyonline) VALUES('1','"+PlayerHandler.getPlayerCount()+"');");
 			destroyCon();
 		} catch (Exception e) {
 			e.printStackTrace();

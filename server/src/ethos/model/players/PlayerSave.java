@@ -268,6 +268,7 @@ public class PlayerSave {
 			Misc.println(playerName + ": error loading file.");
 			return 3;
 		}
+
 		while (EndOfFile == false && line != null) {
 			line = line.trim();
 			int spot = line.indexOf("=");
@@ -278,15 +279,6 @@ public class PlayerSave {
 				token2 = token2.trim();
 				token3 = token2.split("\t");
 				switch (ReadMode) {
-				case 1:
-					if (token.equals("character-password")) {
-						if (playerPass.equalsIgnoreCase(token2) || Misc.basicEncrypt(playerPass).equals(token2) || Misc.md5Hash(playerPass).equals(token2)) {
-							playerPass = token2;
-						} else {
-							return 3;
-						}
-					}
-					break;
 				case 2:
 					if (token.equals("character-height")) {
 						p.heightLevel = Integer.parseInt(token2);
@@ -1192,18 +1184,13 @@ public class PlayerSave {
 		BufferedWriter characterfile = null;
 		try {
 			characterfile = new BufferedWriter(new FileWriter(Config.CHARACTER_SAVE_DIRECTORY + p.playerName + ".txt"));
-			PlayerDatabase.addPlayerToDataBase(p.playerName, Misc.md5Hash(p.playerPass));
-			/* ACCOUNT */
-			characterfile.write("[ACCOUNT]", 0, 9);
-			characterfile.newLine();
-			characterfile.write("character-username = ", 0, 21);
-			characterfile.write(p.playerName, 0, p.playerName.length());
-			characterfile.newLine();
-			characterfile.write("character-password = ", 0, 21);
-			String passToWrite = Misc.md5Hash(p.playerPass);
-			characterfile.write(passToWrite, 0, passToWrite.length());
-			characterfile.newLine();
-			characterfile.newLine();
+			
+			/*
+			 * In the future if we want to allow character saving to the db fully we will do it here.
+			 * 
+			 */
+			//PlayerDatabase.addPlayerToDataBase(p.playerName, Misc.sha1(p.playerName.toLowerCase()+p.playerPass));
+
 
 			/* CHARACTER */
 			characterfile.write("[CHARACTER]", 0, 11);

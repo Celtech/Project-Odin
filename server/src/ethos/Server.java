@@ -70,8 +70,8 @@ public class Server {
 	/**
 	 * Represents our calendar with a given delay using the TimeUnit class
 	 */
-	private static GameCalendar calendar = new ethos.util.date.GameCalendar(
-			new SimpleDateFormat("yyyy/MM/dd HH:mm:ss"), "GMT-3:00");
+	private static GameCalendar calendar = new ethos.util.date.GameCalendar(new SimpleDateFormat("yyyy/MM/dd HH:mm:ss"),
+			"GMT-3:00");
 
 	private static HolidayController holidayController = new HolidayController();
 
@@ -198,20 +198,6 @@ public class Server {
 	};
 
 	public static void main(java.lang.String args[]) {
-		com.everythingrs.service.Service.scheduledService.scheduleAtFixedRate(new Runnable() {
-			@Override
-			public void run() {
-				com.everythingrs.heatmaps.Heatmap.getMap().clear();
-				for (Player player : PlayerHandler.players) {
-					if (player != null) {
-						com.everythingrs.heatmaps.Heatmap.getMap().put(player.playerName,
-								new com.everythingrs.heatmaps.Heatmap(player.playerName, player.absX, player.absY,
-										player.height));
-					}
-				}
-				com.everythingrs.heatmaps.Heatmap.update("zlfhyknitg3ygmwes2bc07ldi4gtajdhn7ln3tjybiu76jkbj4i7m3pavp7jjgek1p2twlcvxi529");
-			}
-		}, 0, 5, java.util.concurrent.TimeUnit.SECONDS);
 		try {
 			long startTime = System.currentTimeMillis();
 			System.setOut(extracted());

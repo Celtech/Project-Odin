@@ -155,7 +155,6 @@ public class TradeSession extends MultiplayerSession {
 				player.getItems().resetItems(3214);
 				List<GameItem> items = getItems(player);
 				String SendTrade = NOTHING;
-				String SendAmount = "";
 				boolean first = true;
 				for (GameItem item : items) {
 					if (item.getId() > 0 && item.getAmount() > 0) {
@@ -174,7 +173,6 @@ public class TradeSession extends MultiplayerSession {
 				
 				player.getPA().sendFrame126(SendTrade, 3557);
 				SendTrade = NOTHING;
-				SendAmount = "";
 				first = true;
 				
 				

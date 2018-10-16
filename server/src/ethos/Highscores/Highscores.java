@@ -20,7 +20,7 @@ public class Highscores implements Runnable {
 			conn = DriverManager.getConnection("jdbc:mysql://"+Config.HOST+":3306/"+Config.DATABASE, Config.USER, Config.PASS);
 			
 			Statement stmt = conn.createStatement(1005, 1008);
-            stmt.executeUpdate("DELETE FROM hs_users WHERE username='test user'");
+            stmt.executeUpdate("DELETE FROM game_highscores WHERE username='test user'");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -52,7 +52,7 @@ public class Highscores implements Runnable {
 			}
 		
 			String name = player.getName();
-			this.executeUpdate("DELETE FROM hs_users WHERE username='"+name+"'");
+			this.executeUpdate("DELETE FROM game_highscores WHERE username='"+name+"'");
 			
 			PreparedStatement stmt2 = prepare(generateQuery());
 			stmt2.setString(1, player.getName());
@@ -133,7 +133,7 @@ public class Highscores implements Runnable {
 	
 	public static String generateQuery() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("INSERT INTO hs_users (");
+		sb.append("INSERT INTO game_highscores (");
 		sb.append("username, ");
 		sb.append("rights, ");
 		sb.append("mode, ");

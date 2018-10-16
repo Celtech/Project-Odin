@@ -11,7 +11,6 @@ import java.util.Optional;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-import ethos.clip.ObjectDef;
 import ethos.model.npcs.bosses.vorkath.Vorkath;
 import org.apache.commons.lang3.ArrayUtils;
 
@@ -19,8 +18,6 @@ import ethos.Config;
 import ethos.Server;
 import ethos.clip.PathChecker;
 import ethos.clip.Region;
-import ethos.event.CycleEvent;
-import ethos.event.CycleEventContainer;
 import ethos.event.CycleEventHandler;
 import ethos.event.DelayEvent;
 import ethos.event.impl.WheatPortalEvent;

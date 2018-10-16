@@ -1,8 +1,11 @@
 package ethos.util;
 
+import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -16,6 +19,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
+
+import javax.xml.bind.DatatypeConverter;
 
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.Range;
@@ -407,11 +412,24 @@ public class Misc {
 		double x = (double) i / (double) i1;
 		return (int) Math.round(x * i2);
 	}
-
+	
+	public static String sha1(String input) {
+	    String sha1 = null;
+	    try {
+	        MessageDigest msdDigest = MessageDigest.getInstance("SHA-1");
+	        msdDigest.update(input.getBytes("UTF-8"), 0, input.length());
+	        sha1 = DatatypeConverter.printHexBinary(msdDigest.digest());
+	        return sha1;
+	    } catch (UnsupportedEncodingException | NoSuchAlgorithmException e) {
+	    	e.printStackTrace();
+	    }
+	    return null;
+	}
+	
 	public static String md5Hash(String md5) {
 		try {
 
-			java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
+			MessageDigest md = MessageDigest.getInstance("MD5");
 			byte[] array = md.digest(md5.getBytes());
 
 			StringBuffer sb = new StringBuffer();
